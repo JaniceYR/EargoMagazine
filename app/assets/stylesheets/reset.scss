@@ -17,24 +17,11 @@ th, thead, time, tr, tt, u, ul, var, video {
   outline: 0;
 }
 
-body, button, input, textarea, div, a {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  font-size: 14px;
+body, button, input, textarea, div, a, ul, li {
+  font-family: 'Nunito Sans', arial, sans-serif;
+  font-size: 18px;
   line-height: 18px;
   outline: 0;
-}
-
-input {
-  cursor: auto;
-}
-
-a {
-  text-decoration: none;
-  color: $text-gray;
-}
-
-a:visited {
-  color: inherit;
 }
 
 ul, li {

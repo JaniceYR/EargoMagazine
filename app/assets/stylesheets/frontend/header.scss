@@ -1,0 +1,21 @@
+@import "colors.scss";
+
+div.header {
+  width: 100%;
+  height: 90px;
+  background: $background-gray;
+  display: flex;
+  justify-content: center;
+}
+
+div.header-frame {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  background: $white;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
