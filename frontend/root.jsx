@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as APIUtil from './util/api_util.js';
 import Header from './header';
+
 class Root extends React.Component {
 
   constructor(props){
@@ -25,6 +26,7 @@ class Root extends React.Component {
     }
     return(
       <div>
+        <Header />
         reacT!!!!
         {
           this.state.wikis.map((wiki) => {
