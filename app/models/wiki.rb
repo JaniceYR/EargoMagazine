@@ -40,14 +40,11 @@ class Wiki < ApplicationRecord
         when /\A\| name/
           wiki.name = ele.split("=")[1].strip.delete("[]{}'")
         when /\A\| logo /
-          wiki.logo_url = ele.split("=")[1].strip.delete("[]{}'").split("|")[0]
-          wiki.logo_url.slice!("File:")
+          wiki.logo_url = Wiki.fetch_image_url(ele.split("=")[1].strip.delete("[]{}'").split("|")[0].split(" ").join("_"))
         when /\A\|logo /
-          wiki.logo_url = ele.split("=")[1].strip.delete("[]{}'").split("|")[0]
-          wiki.logo_url.slice!("File:")
+          wiki.logo_url = Wiki.fetch_image_url(ele.split("=")[1].strip.delete("[]{}'").split("|")[0].split(" ").join("_"))
         when /\A\|image_file /
-          wiki.logo_url = ele.split("=")[1].strip.delete("[]{}'").split("|")[0]
-          wiki.logo_url.slice!("File:")
+          wiki.logo_url = Wiki.fetch_image_url("File:" + ele.split("=")[1].strip.delete("[]{}'").split("|")[0].split(" ").join("_"))
         when /\A\| type/
           wiki.site_type = ele.split("=")[1].strip.delete("[]").split("|").join(", ")
         when /\A\|type/
@@ -84,5 +81,10 @@ class Wiki < ApplicationRecord
       wikis << wiki
     end
     wikis
+  end
+
+  def self.fetch_image_url(url)
+    img_api = HTTParty.get("https://en.wikipedia.org/w/api.php?action=query&titles=#{url}&prop=imageinfo&format=json&iiprop=url")
+    img_api["query"]["pages"].values[0]["imageinfo"][0]["url"]
   end
 end
