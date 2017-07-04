@@ -1,7 +1,10 @@
 class Api::WikisController < ApplicationController
   def index
-    @wikis = Wiki.all
-    render "api/wikis/index"
+    magazines = ["Popular Science", "PC Magazine", "TechCrunch", "Gizmodo", "The Verge", "GeekWire"]
+
+    @wikis = Wiki.fetch_by_names(magazines)
+    # @wikis = Wiki.fetch_by_names(wiki_params[:names])
+    render json: @wikis
   end
 
   private
