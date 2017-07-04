@@ -7,19 +7,16 @@ export default class Magazine extends React.Component {
     this.className = this.props.index % 2 === 0 ? "magazine-even" : "magazine-odd";
   }
 
-  
+
 
   render() {
     return (
       <div className={this.className}>
-        <ul >
-          <li>
-            <img src={`https://en.wikipedia.org/wiki/File:${this.wiki.logo_url}`}></img>
-            {this.wiki.logo_url}
-            <img src={`https://en.wikipedia.org/wiki/${this.wiki.name}#/media/File:${this.wiki.logo_url}`}></img>
-            <img src="https://en.wikipedia.org/wiki/Gizmodo#/media/File:Gizmodoscreenshot.png"></img>
+        <ul>
+          <li className="magazine-image">
+            <img src={this.wiki.logo_url}></img>
           </li>
-          <li>
+          <li className="magazine-info">
             <ul>
               <li>
                 {this.wiki.name}
