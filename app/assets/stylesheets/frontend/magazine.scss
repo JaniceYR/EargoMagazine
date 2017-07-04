@@ -1,1 +1,52 @@
 @import "colors.scss";
+
+div.magazine-frame {
+  margin: auto;
+  color: $text-gray;
+  max-width: 900px;
+  width: 100%;
+  min-height: 150px;
+  padding: 20px 50px;
+}
+ul.magazine-frame {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+ul.magazine-frame li {
+  display: flex;
+  align-content: center;
+}
+li.magazine-image {
+  flex: 1;
+  height: 200px;
+  border: 1px solid $border-gray;
+  margin-right: 50px;
+  padding: 20px;
+}
+li.magazine-image img {
+  margin: auto;
+  max-width: 200px;
+  max-height: 200px;
+}
+li.magazine-info {
+  flex: 2;
+}
+
+.magazine-name {
+  font-size: 30px;
+  line-height: 45px;
+  font-weight: 800;
+}
+.magazine-info a {
+  margin-left: 6px;
+}
+.magazine-name a {
+  line-height: 52px;
+  margin-left: 10px;
+  font-weight: 200;
+}
+
+.magazine-url {
+  margin: 0;
+}

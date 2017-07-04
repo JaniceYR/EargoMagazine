@@ -12,11 +12,10 @@ class Root extends React.Component {
   }
 
   componentWillMount() {
-    let magazines = ["Popular Science", "PC Magazine", "TechCrunch", "Gizmodo", "The Verge", "GeekWire"];
+    let magazines = ["TechCrunch", "Gizmodo", "The Verge", "Popular Science", "PC Magazine", "GeekWire"];
     APIUtil.fetchMagazines(magazines).then(
       (wikis) => {
         this.setState({wikis: wikis});
-        console.log(this.state);
       }
     );
   }
