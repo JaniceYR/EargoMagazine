@@ -27,12 +27,18 @@ class Root extends React.Component {
     return(
       <div>
         <Header />
-        reacT!!!!
-        {
-          this.state.wikis.map((wiki) => {
-          return wiki.name;
-        })
-      }
+        <div className="root-frame">
+          reacT!!!!
+          {
+            this.state.wikis.map((wiki) => {
+              return (
+                <div>
+                  wiki.name<br/>
+                </div>
+              );
+            })
+          }
+        </div>
       </div>
     );
   }

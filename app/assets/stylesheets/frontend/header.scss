@@ -6,6 +6,8 @@ div.header {
   background: $background-gray;
   display: flex;
   justify-content: center;
+  margin-bottom: 5px;
+  position: fixed;
 }
 
 div.header-frame {
@@ -14,8 +16,22 @@ div.header-frame {
   height: 100%;
   max-width: 1440px;
   background: $white;
-  
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+div.header-frame ul.header-logo {
+  background-image: image-url('logo.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 80px;
+  width: 250px;
+  margin: 5px 30px;
+  cursor: pointer;
+}
+
+div.header-frame ul.header-metion {
+
 }

@@ -6,10 +6,9 @@ export default class Header extends React.Component {
         <div className="header">
           <div className="header-frame">
             <ul className="header-logo">
-              logo
             </ul>
             <ul className="header-mentions">
-              mentions
+              
             </ul>
           </div>
         </div>
