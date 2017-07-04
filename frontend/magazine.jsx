@@ -12,13 +12,13 @@ export default class Magazine extends React.Component {
   render() {
     return (
       <div className={this.className}>
-        <ul>
+        <ol reversed>
           <li className="magazine-image">
             <img src={this.wiki.logo_url}></img>
           </li>
           <li className="magazine-info">
             <ul>
-              <li>
+              <li className="magazine-name">
                 {this.wiki.name}
               </li>
               <li>
@@ -41,7 +41,7 @@ export default class Magazine extends React.Component {
               </li>
             </ul>
           </li>
-        </ul>
+        </ol>
       </div>
     );
   }
