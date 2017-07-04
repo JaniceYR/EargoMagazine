@@ -40,7 +40,7 @@ export default class Magazine extends React.Component {
               <li>
               {
                 this.wiki.editor ?
-                `Editor: ${this.wiki.editor}` : ""
+                `Editor : ${this.wiki.editor}` : ""
               }
               </li>
               <li>
@@ -50,7 +50,7 @@ export default class Magazine extends React.Component {
                 }
               </li>
               <li>
-                <a href={this.wiki.url} className="magazine-url">{this.wiki.url}</a>
+                Homepage :<a href={this.wiki.url} className="magazine-url">{this.wiki.url}</a>
               </li>
             </ul>
           </li>

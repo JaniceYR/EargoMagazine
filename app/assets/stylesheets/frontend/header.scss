@@ -21,7 +21,6 @@ div.header-frame {
 
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
 div.header-frame ul.header-logo {
@@ -34,6 +33,18 @@ div.header-frame ul.header-logo {
   cursor: pointer;
 }
 
-div.header-frame ul.header-metion {
-
+ul.header-mentions {
+  height: 80px;
+  align-items: center;
+  display: flex;
+}
+ul.header-mentions h1 {
+  color: $text-gray;
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 30px;
+}
+ul.header-mentions h1:hover {
+  color: $eargo-blue;
+  cursor: pointer;
 }

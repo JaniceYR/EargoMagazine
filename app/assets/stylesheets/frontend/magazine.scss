@@ -6,8 +6,13 @@ div.magazine-frame {
   max-width: 900px;
   width: 100%;
   min-height: 150px;
-  padding: 20px 50px;
+  padding: 25px 0px 25px 50px;
+  border-bottom: 1px solid $border-gray;
 }
+div.magazine-frame:last-child {
+  margin-bottom: 50px;
+}
+
 ul.magazine-frame {
   width: 100%;
   display: flex;
@@ -38,6 +43,7 @@ li.magazine-info {
   line-height: 45px;
   font-weight: 800;
 }
+
 .magazine-info a {
   margin-left: 6px;
 }
@@ -45,8 +51,4 @@ li.magazine-info {
   line-height: 52px;
   margin-left: 10px;
   font-weight: 200;
-}
-
-.magazine-url {
-  margin: 0;
 }

@@ -8,7 +8,9 @@ export default class Header extends React.Component {
             <ul className="header-logo">
             </ul>
             <ul className="header-mentions">
-
+              <h1>
+                Magazine
+              </h1>
             </ul>
           </div>
         </div>
