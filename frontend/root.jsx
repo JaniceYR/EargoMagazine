@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as APIUtil from './util/api_util.js';
 import Header from './header';
+import Magazine from './magazine';
+import * as APIUtil from './util/api_util.js';
 
 class Root extends React.Component {
 
@@ -32,35 +33,7 @@ class Root extends React.Component {
             {
               this.state.wikis.map((wiki, index) => {
                 return (
-                  <ul key={`wiki-${index}`}>
-                    <li>
-                      {wiki.name}
-                    </li>
-                    <li>
-                      {wiki.site_type}
-                    </li>
-                    <li>
-                      {wiki.logo_url}
-                    </li>
-                    <li>
-                      {wiki.founded}
-                    </li>
-                    <li>
-                      {wiki.created}
-                    </li>
-                    <li>
-                      {wiki.editor}
-                    </li>
-                    <li>
-                      {wiki.owner}
-                    </li>
-                    <li>
-                      {wiki.url}
-                    </li>
-                    <br/>
-                      <br/>
-                    <br/>
-                  </ul>
+                  <Magazine wiki={wiki} index={index} key={`wiki-${index}`}/>
                 );
               })
             }

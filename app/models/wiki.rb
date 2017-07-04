@@ -49,9 +49,9 @@ class Wiki < ApplicationRecord
           wiki.logo_url = ele.split("=")[1].strip.delete("[]{}'").split("|")[0]
           wiki.logo_url.slice!("File:")
         when /\A\| type/
-          wiki.site_type = ele.split("=")[1].strip.delete("[]")
+          wiki.site_type = ele.split("=")[1].strip.delete("[]").split("|").join(", ")
         when /\A\|type/
-          wiki.site_type = ele.split("=")[1].strip.delete("[]")
+          wiki.site_type = ele.split("=")[1].strip.delete("[]").split("|").join(", ")
         when /\A\| editor/
           wiki.editor = ele.split("=")[1].strip.delete("[]")
         when /\A\|editor/
@@ -61,23 +61,24 @@ class Wiki < ApplicationRecord
         when /\A\| url/
           wiki.url = ele.split("=")[1].strip.delete("[]{}'")
           wiki.url.slice!("URL|")
+          wiki.url = wiki.url.split("|")[0].split(" ")[0]
         when /\A\| website/
           wiki.url = ele.split("=")[1].strip.delete("[]{}'").split("|")[1]
+          wiki.url = wiki.url.split("|")[0].split(" ")[0]
         when /\A\|website/
           wiki.url = ele.split("=")[1].strip.delete("[]{}'").split("|")[1]
+          wiki.url = wiki.url.split("|")[0].split(" ")[0]
         when /\A\| founded/
           wiki.founded = ele.split("=")[1].split("{{start date")[1].split("|")[1]
         when /\A\| launch date/
           wiki.founded = ele.split("=")[1].split("{{start date")[1].split("|")[1]
-          if wiki.founded.zero?
-            wiki.founded = ele.split("{{start date")[1].split("|")[2]
-          end
+          wiki.founded = ele.split("{{start date")[1].split("|")[2] if wiki.founded.zero?
         when /\A\| launch_date/
           wiki.founded = ele.split("=")[1].split("{{start date")[1].split("|")[1]
         when /\A\|firstdate/
           wiki.founded = ele.split("=")[1].split("{{start date")[1].split("|")[1]
         when /\A\| author/
-          wiki.created = ele.split("=")[1].strip.delete("[]{}'").split("<br>").join(", ")
+          wiki.created = ele.split("=")[1].strip.delete("[]{}'").split("<br />").join(", ").split("<")[0]
         end
       end
       wikis << wiki
